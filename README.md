@@ -142,7 +142,7 @@ dotnet run
 # http://localhost:5289/health/detail
 ```
 
-Visual Studio users: press **F5** — the browser opens automatically to the Swagger UI.
+Visual Studio users: press **F5** — the browser opens automatically to the `/health/detail` report. The raw OpenAPI document is served at `/openapi/v1.json` in the Development environment.
 
 ---
 

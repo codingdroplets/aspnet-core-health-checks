@@ -1,6 +1,25 @@
-@HealthCheckDemo_HostAddress = http://localhost:5032
+@HealthCheckDemo_HostAddress = http://localhost:5289
 
-GET {{HealthCheckDemo_HostAddress}}/weatherforecast/
+### Summary probe — plain-text status (200 Healthy/Degraded, 503 Unhealthy)
+GET {{HealthCheckDemo_HostAddress}}/health
+Accept: text/plain
+
+###
+
+### Liveness probe — system checks only (memory, disk), JSON
+GET {{HealthCheckDemo_HostAddress}}/health/live
+Accept: application/json
+
+###
+
+### Readiness probe — startup gate + external dependency, JSON
+GET {{HealthCheckDemo_HostAddress}}/health/ready
+Accept: application/json
+
+###
+
+### Full detail — all checks, rich JSON report
+GET {{HealthCheckDemo_HostAddress}}/health/detail
 Accept: application/json
 
 ###
